@@ -1,0 +1,47 @@
+﻿@model BusinessLayer.Employee
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>New Employee Details</legend>
+        <div class="editor-label">
+            @*@Html.LabelFor(Model => Model.Id)*@
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(Model => Model.Id)
+            @Html.ValidationMessageFor(Model => Model.Id)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(Model=> Model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(Model=> Model.FirstName)
+            @Html.ValidationMessageFor(Model=> Model.FirstName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(Model => Model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(Model => Model.LastName)
+            @Html.ValidationMessageFor(Model => Model.LastName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(Model => Model.City)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(Model => Model.City)
+            @Html.ValidationMessageFor(Model => Model.City)
+        </div>
+        <p> <input type="submit" value="create"</p>
+    </fieldset>
+    <div>
+        @Html.ActionLink("Back to Main", "Index")
+    </div>
+}
+
